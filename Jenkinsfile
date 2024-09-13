@@ -1,29 +1,31 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("Build"){
-            steps{
+    stages {
+        stage("Build") {
+            steps {
                 echo "Build"
             }
-        }stage("Test"){
-            steps{
+        }
+        stage("Test") {
+            steps {
                 echo "Test"
             }
-        }stage("Deploy"){
-            steps{
+        }
+        stage("Deploy") {
+            steps {
                 echo "Deploy"
             }
         }
     }
-    post{
-        always{
-            echo "========always========"
+    post {
+        always {
+            echo "======== always ========"
         }
-        success{
-            echo "========pipeline executed successfully ========"
+        success {
+            echo "======== pipeline executed successfully ========"
         }
-        failure{
-            echo "========pipeline execution failed========"
+        failure {
+            echo "======== pipeline execution failed ========"
         }
     }
 }
