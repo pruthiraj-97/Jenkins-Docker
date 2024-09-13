@@ -1,6 +1,11 @@
 pipeline {
-    agent { docker { image 'ubuntu' } }
+    agent any
     stages {
+        stage("Check Docker") {
+            steps {
+                sh 'docker --version'
+            }
+        }
         stage("Build") {
             steps {
                 echo "Build"
